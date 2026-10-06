@@ -2,19 +2,13 @@ import requests
 import os
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-CHAT_ID = os.getenv("CHAT_ID")
 
-mensaje = "✅ Monitor funcionando desde GitHub"
+print("LONGITUD TOKEN:", len(BOT_TOKEN))
+print("INICIO TOKEN:", BOT_TOKEN[:10])
 
-url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+url = f"https://api.telegram.org/bot{BOT_TOKEN}/getMe"
 
-r = requests.post(
-    url,
-    data={
-        "chat_id": CHAT_ID,
-        "text": mensaje
-    }
-)
+r = requests.get(url)
 
 print("STATUS:", r.status_code)
 print("RESPUESTA:", r.text)
