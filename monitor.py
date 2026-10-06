@@ -1,5 +1,16 @@
+from datetime import datetime
 import requests
 import os
+
+# Solo trabajar entre 15:30 y 00:30
+ahora = datetime.now()
+hora_actual = ahora.hour * 60 + ahora.minute
+
+inicio = 15 * 60 + 30  # 15:30
+fin = 30               # 00:30
+
+if not (hora_actual >= inicio or hora_actual <= fin):
+    print(    raise SystemExit
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
@@ -14,8 +25,6 @@ Monitor configurado para:
 ✅ DNI
 ✅ Autorización de viaje de menor
 ✅ Carta poder
-
-Playwright instalado correctamente.
 """
 
 requests.post(
