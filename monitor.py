@@ -4,15 +4,25 @@ import os
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 
-url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+mensaje = """
+✅ FASE 2 ACTIVADA
 
-r = requests.post(
-    url,
+Monitor configurado para:
+
+✅ Pasaportes
+✅ Registro nacimiento
+✅ DNI
+✅ Autorización de viaje de menor
+✅ Carta poder
+
+Playwright instalado correctamente.
+"""
+
+requests.post(
+    f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
     data={
         "chat_id": CHAT_ID,
-        "text": "Prueba"
+        "text": mensaje
     }
 )
-
-print("STATUS:", r.status_code)
-print("RESPUESTA:", r.text)
+`
