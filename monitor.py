@@ -25,4 +25,3 @@ requests.post(
         "text": mensaje
     }
 )
-`
