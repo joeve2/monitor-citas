@@ -2,7 +2,7 @@ from datetime import datetime
 import requests
 import os
 
-# Solo trabajar entre 15:30 y 00:30
+# Horario activo: 15:30 a 00:30
 ahora = datetime.now()
 hora_actual = ahora.hour * 60 + ahora.minute
 
@@ -10,7 +10,8 @@ inicio = 15 * 60 + 30  # 15:30
 fin = 30               # 00:30
 
 if not (hora_actual >= inicio or hora_actual <= fin):
-    print(    raise SystemExit
+    print("Fuera de horario")
+    raise SystemExit
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
@@ -34,3 +35,5 @@ requests.post(
         "text": mensaje
     }
 )
+
+print("Mensaje enviado")
