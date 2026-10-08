@@ -48,7 +48,7 @@ for nombre, service_id in SERVICIOS.items():
 
     except Exception as e:
         print(nombre, e)
- print("Servicios con citas:",disponibles)).
+ print("Servicios con citas:",disponibles)
 
 if disponibles:
 
