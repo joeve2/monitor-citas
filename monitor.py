@@ -5,7 +5,7 @@ import os
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 
-# Horario activo
+# Horario activo: 15:30 -> 00:30
 ahora = datetime.now()
 hora_actual = ahora.hour * 60 + ahora.minute
 
@@ -40,7 +40,6 @@ for nombre, service_id in SERVICIOS.items():
         r = requests.get(url, timeout=30)
 
         if r.status_code == 200:
-
             datos = r.json()
 
             if datos:
@@ -48,7 +47,6 @@ for nombre, service_id in SERVICIOS.items():
 
     except Exception as e:
         print(nombre, e)
- print("Servicios con citas:",disponibles)
 
 if disponibles:
 
