@@ -3,7 +3,7 @@ name: Monitor Citas
 on:
   workflow_dispatch:
   schedule:
-      - cron: "*/3 * * * *"
+      - cron: "* * * * *"
 
 jobs:
   run:
